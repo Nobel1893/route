@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Route Survey</string>
+    <string name="title_activity_login">Login</string>
+    <string name="route">Route</string>
+    <string name="survey">Survey</string>
+    <string name="user_name">user name</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="title_activity_courses">Courses</string>
+</resources>
