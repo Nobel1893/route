@@ -2,7 +2,6 @@ package route.com.routesurvey;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +12,7 @@ import java.util.ArrayList;
 
 import route.com.routesurvey.Abstract.CourseItem;
 import route.com.routesurvey.Adapters.CoursesListAdapter;
+import route.com.routesurvey.Base.MyBaseFragment;
 
 /**
  * Created by Mohamed Nabil Mohamed (Nobel) on 4/7/2018.
@@ -20,7 +20,7 @@ import route.com.routesurvey.Adapters.CoursesListAdapter;
  * m.nabil.fci2015@gmail.com
  */
 
-public class CoursesFragment extends Fragment {
+public class CoursesFragment extends MyBaseFragment {
     ListView coursesList;
 
 
@@ -49,6 +49,8 @@ public class CoursesFragment extends Fragment {
                // Toast.makeText(Courses.this,items.get(position).getCourseName(),Toast.LENGTH_SHORT).show();
             }
         });
+
+
 
         return rootView;
 

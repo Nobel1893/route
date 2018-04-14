@@ -1,18 +1,16 @@
 package route.com.routesurvey;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
-public class Login extends AppCompatActivity implements View.OnClickListener {
+import route.com.routesurvey.Base.MyBaseActivity;
+
+public class Login extends MyBaseActivity implements View.OnClickListener {
 
     protected TextView title;
     protected EditText userName;
@@ -29,28 +27,34 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         initView();
         //method 1 with static paramter
         title.setText(actTitle);
-/*
-        String actitle=getIntent().getStringExtra("title");
-        method 2 with parameter in intent
-        if (actitle!=null){
-            title.setText(actitle);
-        }
-*/
     }
 
     public void onLoginClick() {
         String Suser_name = userName.getText().toString();
         String Spassword = password.getText().toString();
 
-        Toast.makeText(Login.this, Suser_name, Toast.LENGTH_SHORT).show();
-        Snackbar.make(findViewById(R.id.parent), Suser_name, Snackbar.LENGTH_LONG).show();
+        if (Suser_name.equals(""))
+        {
+            ShowMessage("error","please insert username");
+        }
+        else if (Spassword.equals("")){
+            ShowMessage("error","please insert password");
+
+        }
+
+        else {
+            ShowProgressDialoge();
+        }
+
+  //      Toast.makeText(Login.this, Suser_name, Toast.LENGTH_SHORT).show();
+//        Snackbar.make(findViewById(R.id.parent), Suser_name, Snackbar.LENGTH_LONG).show();
 
         Log.e("username", Suser_name);
         Log.e("password", Spassword);
 
-        Intent i=new Intent(Login.this,HomeActivity.class);
+    /*    Intent i=new Intent(Login.this,HomeActivity.class);
         startActivity(i);
-
+*/
     }
 
 
